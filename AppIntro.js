@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
   Animated,
   Dimensions,
   Image,
@@ -19,7 +18,7 @@ import RenderDots from './components/Dots';
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
 
-const defaulStyles = {
+const defaultStyles = {
   header: {
     flex: 0.5,
     justifyContent: 'center',
@@ -108,7 +107,7 @@ export default class AppIntro extends Component {
   constructor(props) {
     super(props);
 
-    this.styles = StyleSheet.create(assign({}, defaulStyles, props.customStyles));
+    this.styles = StyleSheet.create(assign({}, defaultStyles, props.customStyles));
 
     this.state = {
       skipFadeOpacity: new Animated.Value(1),
@@ -242,7 +241,7 @@ export default class AppIntro extends Component {
     const AnimatedStyle2 = this.getTransform(index, 0, level);
     const AnimatedStyle3 = this.getTransform(index, 15, level);
     const imgSource = (typeof img === 'string') ? {uri: img} : img;
-    const pageView = (
+    return (
       <View style={[this.styles.slide, { backgroundColor }]} showsPagination={false} key={index}>
         <Animated.View style={[this.styles.header, ...AnimatedStyle1.transform]}>
           <Image style={imgStyle} source={imgSource} />
@@ -257,7 +256,6 @@ export default class AppIntro extends Component {
         </View>
       </View>
     );
-    return pageView;
   }
 
   renderChild = (children, pageIndex, index) => {
