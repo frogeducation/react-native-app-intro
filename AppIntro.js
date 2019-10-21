@@ -1,5 +1,5 @@
 import assign from 'assign-deep';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
   StatusBar,
   StyleSheet,
@@ -360,35 +360,6 @@ export default class AppIntro extends Component {
     );
   }
 }
-
-AppIntro.propTypes = {
-  dotColor: PropTypes.string,
-  activeDotColor: PropTypes.string,
-  rightTextColor: PropTypes.string,
-  leftTextColor: PropTypes.string,
-  onSlideChange: PropTypes.func,
-  onSkipBtnClick: PropTypes.func,
-  onDoneBtnClick: PropTypes.func,
-  onNextBtnClick: PropTypes.func,
-  pageArray: PropTypes.array,
-  doneBtnLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
-  skipBtnLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
-  nextBtnLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
-  customStyles: PropTypes.object,
-  defaultIndex: PropTypes.number,
-  showSkipButton: PropTypes.bool,
-  showDoneButton: PropTypes.bool,
-  showDots: PropTypes.bool,
-};
 
 AppIntro.defaultProps = {
   dotColor: 'rgba(255,255,255,.3)',
