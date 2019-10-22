@@ -118,22 +118,7 @@ export default class AppIntro extends Component {
   }
 
   onNextBtnClick = (context) => {
-    if (context.state.isScrolling || context.state.total < 2) return;
-    const state = context.state;
-    const diff = (context.props.loop ? 1 : 0) + 1 + context.state.index;
-    let x = 0;
-    if (state.dir === 'x') x = diff * state.width;
-    if (Platform.OS === 'ios') {
-      context.refs.scrollView.scrollTo({ y: 0, x });
-    } else {
-      context.refs.scrollView.setPage(diff);
-      context.onScrollEnd({
-        nativeEvent: {
-          position: diff,
-        },
-      });
-    }
-    this.props.onNextBtnClick(context.state.index);
+    context.scrollTo(context.state.index + 1);
   }
 
   setDoneBtnOpacity = (value) => {
