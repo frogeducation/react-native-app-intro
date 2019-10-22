@@ -300,7 +300,7 @@ export default class AppIntro extends Component {
     }
 
     return (
-      <View>
+      <View style={{ width: '100%', height: '100%' }}>
         <Swiper
           loop={false}
           index={this.props.defaultIndex}
