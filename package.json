@@ -29,7 +29,7 @@
   "homepage": "https://github.com/frogeducation/react-native-app-intro#readme",
   "dependencies": {
     "assign-deep": "^0.4.5",
-    "react-native-swiper": "^1.5.14"
+    "react-native-swiper": "^1.6.0-rc.3"
   },
   "config": {
     "commitizen": {
